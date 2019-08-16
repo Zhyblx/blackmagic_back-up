@@ -83,7 +83,8 @@ public final class DowOederFile {
     public static String getDowOederFile(String startTime, String endTimer, String fileName, String savePath, String setCookie) {
         String strCode = "";
         try {
-            URL url = new URL("http://172.16.10.60:9091/order/export?timeType=1&startTime=" + startTime + "&endTime=" + endTimer);
+            // timeType=2 代表支付时间
+            URL url = new URL("http://172.16.10.60:9091/order/export?timeType=2&startTime=" + startTime + "&endTime=" + endTimer);
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             //设置链接超时,时间为1分钟;
             conn.setConnectTimeout(60000);

@@ -127,6 +127,19 @@ topicId：专题ID
 <td>主方法直接计算</td>
 </tr>
 
+<tr>
+<td>自动计算实际利润</td>
+<td>businessunit.excel;</td>
+<td>AutomaticProfitCalculation</td>
+<td>构造方法</td>
+<td>
+String startDate(开始日期)<br>
+String endDate(结束日期)<br>
+String strCookie(cookie)<br>
+<td>--</td>
+<td>自动计算电商实际利润</td>
+</tr>
+
 
 <tr>
 <td>类目信息</td>
