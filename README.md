@@ -140,6 +140,17 @@ String strCookie(cookie)<br>
 <td>自动计算电商实际利润</td>
 </tr>
 
+<tr>
+<td>[利润计算]文件判断</td>
+<td>businessunit.excel;</td>
+<td>IsFileExists</td>
+<td>setIsFileExists(File file)</td>
+<td>
+File file(对象文件)<br>
+<td>--</td>
+<td>自动计算实际利润，判断被计算的文件是否存在</td>
+</tr>
+
 
 <tr>
 <td>类目信息</td>

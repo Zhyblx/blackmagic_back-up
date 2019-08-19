@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
+import java.io.File;
 
 /**
  * 类：AutomaticProfitCalculation
@@ -63,6 +64,8 @@ public class AutomaticProfitCalculation {
     }
 
     private final String Path = "/Users/zhangyibin/Downloads/";
+    private File file=null;
+    private boolean isFileExists=false;
 
     private String getExcelName() {
         return startDateName + "至" + endDateName + "的订单.xlsx";// 文件名格式：2019-08-16至2019-08-16的订单.xlsx
@@ -84,6 +87,19 @@ public class AutomaticProfitCalculation {
                 String endTime = TimeStamp.dateToStamp(getEndDate());
                 System.out.println(startTime);
                 System.out.println(endTime);
+
+                file=new File(Path+getExcelName());
+                isFileExists=IsFileExists.setIsFileExists(file);
+                if(isFileExists){
+                    System.out.println("存在文件已更新！");
+
+                }else{
+                    System.out.println("新文件已下载！");
+
+                }
+
+//                System.out.println(IsFileExists.setIsFileExists(file));
+                Thread.sleep(1000);
 
                 String URL[] = {"http://truechoice.ultimavip.org/order/export?timeType=2&startTime=", "&endTime="};
 
@@ -157,7 +173,7 @@ public class AutomaticProfitCalculation {
     };
 
     private static AutomaticProfitCalculation automaticProfitCalculation =
-            new AutomaticProfitCalculation("2019-08-16", "2019-08-16", "FFDE4FC2F1474573BC61AE49BA690F15");
+            new AutomaticProfitCalculation("2019-08-18", "2019-08-18", "D3C154950A20F4ADA306CC3277E632B7");
 
     /*
      * 线程：main
