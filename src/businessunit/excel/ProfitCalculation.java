@@ -11,6 +11,11 @@ import java.io.FileInputStream;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 类：ProfitCalculation
+ * 作用：计算Excel中的实际利润汇总值
+ */
+
 public class ProfitCalculation {
 
     private String path = "";
@@ -142,7 +147,7 @@ public class ProfitCalculation {
 
     public static void main(String[] args) throws Exception {
         //"/Users/zhangyibin/Downloads/2019-08-15至2019-08-15的订单.xlsx"
-        ProfitCalculation profitCalculation = new ProfitCalculation("/Users/zhangyibin/Downloads/2019-08-01至2019-08-15的订单.xlsx");
+        ProfitCalculation profitCalculation = new ProfitCalculation("/Users/zhangyibin/Downloads/2019-08-22至2019-08-22的订单.xlsx");
         System.out.println(profitCalculation.getProfitCalculationList());
         System.out.println(profitCalculation.getSpecialGoods());
 

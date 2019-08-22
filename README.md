@@ -128,6 +128,16 @@ topicId：专题ID
 </tr>
 
 <tr>
+<td>当日利润贡献榜</td>
+<td>businessunit.excel;</td>
+<td>ProfitRanking</td>
+<td>main()</td>
+<td>--</td>
+<td>--</td>
+<td>根据当天利润的贡献度进行排序</td>
+</tr>
+
+<tr>
 <td>自动计算实际利润</td>
 <td>businessunit.excel;</td>
 <td>AutomaticProfitCalculation</td>
