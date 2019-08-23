@@ -161,6 +161,18 @@ File file(对象文件)<br>
 <td>自动计算实际利润，判断被计算的文件是否存在</td>
 </tr>
 
+<tr>
+<td>非电商优惠券损失计算</td>
+<td>businessunit.excel;</td>
+<td>LossStatistics</td>
+<td>LossStatistics()</td>
+<td>
+构造方法<br>
+String strCookie：cookie<br>
+String excleName：excel文件名<br>
+<td>--</td>
+<td>监控非电商优惠券造成的利润损失</td>
+</tr>
 
 <tr>
 <td>类目信息</td>
