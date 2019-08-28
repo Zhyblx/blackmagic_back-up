@@ -147,7 +147,7 @@ public class ProfitCalculation {
 
     public static void main(String[] args) throws Exception {
         //"/Users/zhangyibin/Downloads/2019-08-15至2019-08-15的订单.xlsx"
-        ProfitCalculation profitCalculation = new ProfitCalculation("/Users/zhangyibin/Downloads/2019-08-22至2019-08-22的订单.xlsx");
+        ProfitCalculation profitCalculation = new ProfitCalculation("/Users/zhangyibin/Downloads/2018-09-01至2018-09-30的订单.xlsx");
         System.out.println(profitCalculation.getProfitCalculationList());
         System.out.println(profitCalculation.getSpecialGoods());
 

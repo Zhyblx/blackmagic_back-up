@@ -527,6 +527,25 @@ CookieValue:Cookie值
 </tr>
 
 <tr>
+<td>违规商品查询</td>
+<td>businessunit.blackmagicproject;</td>
+<td>SelectInfo_Violation</td>
+<td>setSelectViolationInfo()</td>
+<td>
+String ShopIDorTitle:商品ID或标题<br>
+String status:上架状态<br>
+int pageNum:页码<br>
+String strCookie:Cookie值<br>
+
+</td>
+<td>String</td>
+<td>
+查询金融和轻古的违规商品
+</td>
+</tr>
+
+
+<tr>
 <td>查询用户信息</td>
 <td>businessunit.blackmagicproject.userinfo;</td>
 <td>UserInfo</td>

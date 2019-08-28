@@ -22,8 +22,8 @@ import java.util.Iterator;
 
 public class SelectInfo {
 
-    private static Connection connection = null;
-    private static Document document = null;
+    public static Connection connection = null;
+    public static Document document = null;
 
     // 1.方法getSelectUid();查询用户是否在电商业务中下过订单,
     public static String getSelectUid(String userid, String strCookie) {
@@ -240,10 +240,10 @@ public class SelectInfo {
          * 字段：商品ID、商品标题、类目名称、发布时间、已售数量、状态：true表示已上架；flesh表示已下架、售价
          *
          */
-        String[] shopID={"3438"};
+        String[] shopID={"15036"};
 
         for(String strid:shopID){
-            System.out.println(SelectInfo.getCommodityData(strid, "", 1, "9F46938986ED3E0932DA1343FB6771A0"));
+            System.out.println(SelectInfo.getCommodityData(strid, "", 1, "87D3A7653116EF4D4F3878966850138C"));
         }
 
 

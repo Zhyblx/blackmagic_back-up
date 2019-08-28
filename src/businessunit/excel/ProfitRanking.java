@@ -33,7 +33,7 @@ public class ProfitRanking implements Runnable {
         System.out.println("TOP值" + "\t" + "商品标题" + "\t" + "销售数量" + "\t" + "汇总利润");
         while (collectionSize >= 0) {
             if (topNum == 21) {
-                break;// 只输出TOP10
+                break;// 只输出TOP20
 
             }
             System.out.println(topNum + "\t" + list.get(collectionSize).toString().replace("=", "\t"));
@@ -140,7 +140,7 @@ public class ProfitRanking implements Runnable {
     }
 
     public static void main(String[] args) {
-        new Thread(new ProfitRanking("2019-08-16至2019-08-22的订单.xlsx")).start();
+        new Thread(new ProfitRanking("2019-08-27至2019-08-27的订单.xlsx")).start();
 
     }
 }

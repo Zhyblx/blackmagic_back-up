@@ -173,7 +173,7 @@ public class AutomaticProfitCalculation {
     };
 
     private static AutomaticProfitCalculation automaticProfitCalculation =
-            new AutomaticProfitCalculation("2019-07-01", "2019-08-22", "71EA8C32C2C45434A533318AEFDD1FCF");
+            new AutomaticProfitCalculation("2019-08-27", "2019-08-27", "35ECF91DC0BA16E019C5ACA50265A233");
 
     /*
      * 线程：main
