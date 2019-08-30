@@ -1152,6 +1152,17 @@ inputCharacter:字符
 <td>输入二维码图片地址</td>
 </tr>
 
+
+<tr>
+<td>过滤(排查)违禁词汇</td>
+<td>toolbox;</td>
+<td>IllegalWordFiltering</td>
+<td>/</td>
+<td>/</td>
+<td>/</td>
+<td>过滤(排查)违禁词汇</td>
+</tr>
+
 </table>
 
 

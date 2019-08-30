@@ -240,14 +240,12 @@ public class SelectInfo {
          * 字段：商品ID、商品标题、类目名称、发布时间、已售数量、状态：true表示已上架；flesh表示已下架、售价
          *
          */
-        String[] shopID={"15036"};
+        String[] shopID={"15059"};
 
         for(String strid:shopID){
-            System.out.println(SelectInfo.getCommodityData(strid, "", 1, "87D3A7653116EF4D4F3878966850138C"));
+            System.out.println(SelectInfo.getCommodityData(strid, "", 1, "BBF7BCFE92C3BB3CFA54D09155D9DC72"));
+
         }
-
-
-
 
 //        System.out.println(SelectInfo.getSelectUid("1146050" , "CB3DC8C3FD66C98A26D0327E558287E5"));
 //        System.out.println(SelectInfo.getSelectUid("1293378" , "CB3DC8C3FD66C98A26D0327E558287E5"));

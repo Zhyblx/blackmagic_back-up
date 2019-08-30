@@ -131,7 +131,7 @@ public class AutomaticProfitCalculation {
             System.out.println("线程(timer)名称:"+Thread.currentThread().getName());
             try {
                 boolean order = false;
-                int i = 5;
+                int i = 10;
                 automaticProfitCalculation.thread.start();
                 Thread.sleep(6000);
                 while (i >= 0) {
@@ -173,7 +173,7 @@ public class AutomaticProfitCalculation {
     };
 
     private static AutomaticProfitCalculation automaticProfitCalculation =
-            new AutomaticProfitCalculation("2019-08-27", "2019-08-27", "35ECF91DC0BA16E019C5ACA50265A233");
+            new AutomaticProfitCalculation("2019-08-30", "2019-08-30", "7C6AB4F7D0D5C9BD4071D4C5AABCE051");
 
     /*
      * 线程：main

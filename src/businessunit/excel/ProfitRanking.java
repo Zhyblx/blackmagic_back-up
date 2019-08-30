@@ -140,7 +140,7 @@ public class ProfitRanking implements Runnable {
     }
 
     public static void main(String[] args) {
-        new Thread(new ProfitRanking("2019-08-27至2019-08-27的订单.xlsx")).start();
+        new Thread(new ProfitRanking("2019-08-30至2019-08-30的订单.xlsx")).start();
 
     }
 }
