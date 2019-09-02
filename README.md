@@ -138,6 +138,17 @@ topicId：专题ID
 </tr>
 
 <tr>
+<td>指定商品的利润并进行排名</td>
+<td>businessunit.excel;</td>
+<td>DesignatedProfitRanking</td>
+<td>main()</td>
+<td>--</td>
+<td>--</td>
+<td>统计出指定商品的利润并进行排名</td>
+</tr>
+
+
+<tr>
 <td>自动计算实际利润</td>
 <td>businessunit.excel;</td>
 <td>AutomaticProfitCalculation</td>

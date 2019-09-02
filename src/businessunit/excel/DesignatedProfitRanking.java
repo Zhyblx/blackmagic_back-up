@@ -1,20 +1,25 @@
 package businessunit.excel;
 
-/**
- * 类：ProfitRanking
- * 作用：根据利润进行降序(排序)
- */
+import org.apache.poi.xssf.usermodel.XSSFCell;
+import org.apache.poi.xssf.usermodel.XSSFRow;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import toolbox.mapsort.accordingtovalue.MapValueComparator;
 
 import java.io.File;
 import java.util.*;
 
-import org.apache.poi.xssf.usermodel.XSSFCell;
-import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-import org.apache.poi.xssf.usermodel.XSSFSheet;
-import org.apache.poi.xssf.usermodel.XSSFRow;
-import toolbox.mapsort.accordingtovalue.MapValueComparator;
+/**
+ * 类：DesignatedProfitRanking
+ * 作用：统计出指定商品的利润并进行排名
+ */
 
-public class ProfitRanking implements Runnable {
+public class DesignatedProfitRanking extends ProfitRanking implements Runnable {
+
+    public DesignatedProfitRanking(String excleName) {
+        super(excleName);
+
+    }
 
     private void sortMapByValue(Map<String, Double> oriMap) {
         List<String> list = new ArrayList<String>();
@@ -32,7 +37,7 @@ public class ProfitRanking implements Runnable {
         int collectionSize = list.size() - 1;
         System.out.println("TOP值" + "\t" + "商品标题" + "\t" + "销售数量" + "\t" + "汇总利润");
         while (collectionSize >= 0) {
-            if (topNum == 21) {
+            if (topNum == 60) {
                 break;// 只输出TOP20
 
             }
@@ -44,24 +49,6 @@ public class ProfitRanking implements Runnable {
         }
     }
 
-    protected final String path = "/Users/zhangyibin/Downloads/";
-    private String excleName = "";
-
-    private void setExcleName(String excleName) {
-        this.excleName = excleName;
-
-    }
-
-    public String getExcleName() {
-        return this.excleName;
-
-    }
-
-    public ProfitRanking(String excleName) {
-        this.setExcleName(excleName);
-
-    }
-
     private File file = null;
     private Map<String, Double> mapSort = new HashMap<String, Double>();
     private Collection<String> shopNameCollection = new LinkedHashSet<String>();
@@ -70,14 +57,14 @@ public class ProfitRanking implements Runnable {
     private XSSFSheet xssfSheet = null;
     private XSSFRow xssfRow = null;
     private XSSFCell shopNameXssfCell = null; //商品名称
+    private XSSFCell shopIdXssfCell = null;
     private XSSFCell orderStatusXSSFCell = null;
     private XSSFCell classifyXSSFCell = null;
     private XSSFCell paymentPriceXSSFCell = null;
     private XSSFCell costPriceXSSFCell = null;
     private XSSFCell numberXSSFCell = null;
 
-    @Override
-    public void run() {
+    public Map<String, Double> setMapSort(String shopID) {
         try {
             file = new File(this.path + this.getExcleName());
             xssfWorkbook = new XSSFWorkbook(file);
@@ -86,6 +73,7 @@ public class ProfitRanking implements Runnable {
             for (int i = 0; i < rowsNum; i++) {
                 xssfRow = xssfSheet.getRow(i);
                 shopNameXssfCell = xssfRow.getCell(10); //商品名称
+                shopIdXssfCell = xssfRow.getCell(9);// 商品ID
                 orderStatusXSSFCell = xssfRow.getCell(5); // 订单状态
                 classifyXSSFCell = xssfRow.getCell(27); // 一级类目
 
@@ -96,9 +84,11 @@ public class ProfitRanking implements Runnable {
                  */
                 if (orderStatusXSSFCell.toString().equals("付款成功") &&
                         !(classifyXSSFCell.toString().equals("金融") || classifyXSSFCell.toString().equals("轻古集市") || classifyXSSFCell.toString().equals("特权"))) {
+                    if (shopIdXssfCell.toString().equals(shopID)) {
+//                        System.out.println(shopNameXssfCell.toString());
+                        shopNameCollection.add(shopNameXssfCell.toString());
 
-                    shopNameCollection.add(shopNameXssfCell.toString());
-
+                    }
                 }
             }
 
@@ -126,21 +116,48 @@ public class ProfitRanking implements Runnable {
 
                     }
                 }
-//                System.out.println(shopName + "|" + shopcount + "|" + (paymentPrice - costPrice));
                 mapSort.put((shopName + "\t" + shopcount), (paymentPrice - costPrice));
 
             }
-//            System.out.println(SortMapByValue.sortMapByValue(mapSort));
-            this.sortMapByValue(mapSort); //调用排序方法
             xssfWorkbook.close();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+
+        }
+        return mapSort;
+
+    }
+
+    @Override
+    public void run() {
+        try {
+            Map<String, Double> map = new HashMap<String, Double>();
+            for (String str : shopIDArray) {
+                map.putAll(designatedProfitRanking.setMapSort(str));
+
+            }
+            this.sortMapByValue(map); //调用排序方法
+
         } catch (Exception e) {
             e.printStackTrace();
 
         }
     }
 
+    /*
+     * 1.构造参数：用于计算的指定文件
+     * 2.shopIDArray:指定的商品ID
+     */
+
+    private static DesignatedProfitRanking designatedProfitRanking = new DesignatedProfitRanking("2019-08-29至2019-09-02的订单.xlsx");
+    private static String[] shopIDArray = new String[]{"15058", "15013", "14997", "6745", "15037", "15038", "15044",
+            "15045", "15046", "14985", "15036", "15062", "15061", "14549", "14822", "3933", "15057", "14119", "13291",
+            "2573", "15006", "15056", "15046", "15047", "15059", "15054", "14814", "14444", "14998", "14642", "14856",
+            "14667", "3556", "3542", "13140", "2679", "15063", "4333", "14825"};
+
     public static void main(String[] args) {
-        new Thread(new ProfitRanking("2019-09-02至2019-09-02的订单.xlsx")).start();
+        new Thread(designatedProfitRanking).start();
 
     }
 }

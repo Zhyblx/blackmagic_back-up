@@ -15,7 +15,7 @@ public class TopicTest {
         List<String> list = new ArrayList<String>();
         int PageNumber=6;
         //男士修炼场(104)、情趣专场(105)、品质生活(106)、秋季养生(107)
-        Topic topic = new Topic("BBF7BCFE92C3BB3CFA54D09155D9DC72","107");
+        Topic topic = new Topic("2AADBDCBDECD9BA368AD419DAD06B65C","105");
         // 循环值代表专题下商品的页码数
         for (int i = 1; i <= PageNumber; i++) {
             list.addAll(topic.setTopicShopID("1"));

@@ -44,10 +44,10 @@ public class UploadShop {
          * 长期专题1:[104] 15046","15045","15044","15038","15037","6745","14997","15013","15058
          *
          */
-        String[] shopID = {"14825","4333","2679","13140","3542","3556","14667","14856","14642","14998","14444","14814"};
+        String[] shopID = {"15046","15045","15044","15038","15037","6745","14997","15013","15058"};
         for (String ID : shopID) {
             System.out.println(ID);
-            UploadShop.setUploadShop("BBF7BCFE92C3BB3CFA54D09155D9DC72", ID, "107");
+            UploadShop.setUploadShop("2AADBDCBDECD9BA368AD419DAD06B65C", ID, "105");
             Thread.sleep(1000);
 
         }

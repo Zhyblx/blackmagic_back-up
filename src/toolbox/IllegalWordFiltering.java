@@ -77,23 +77,3 @@ public class IllegalWordFiltering implements Runnable {
 
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
