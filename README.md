@@ -538,7 +538,7 @@ CookieValue:Cookie值
 </tr>
 
 <tr>
-<td>违规商品查询</td>
+<td>违规商品下架处理</td>
 <td>businessunit.blackmagicproject;</td>
 <td>SelectInfo_Violation</td>
 <td>setSelectViolationInfo()</td>
@@ -551,7 +551,7 @@ String strCookie:Cookie值<br>
 </td>
 <td>String</td>
 <td>
-查询金融和轻古的违规商品
+查询金融和轻古的违规商品，同时对该商品进行下架
 </td>
 </tr>
 

@@ -150,7 +150,7 @@ public class DesignatedProfitRanking extends ProfitRanking implements Runnable {
      * 2.shopIDArray:指定的商品ID
      */
 
-    private static DesignatedProfitRanking designatedProfitRanking = new DesignatedProfitRanking("2019-08-29至2019-09-02的订单.xlsx");
+    private static DesignatedProfitRanking designatedProfitRanking = new DesignatedProfitRanking("2019-09-06至2019-09-06的订单.xlsx");
     private static String[] shopIDArray = new String[]{"15058", "15013", "14997", "6745", "15037", "15038", "15044",
             "15045", "15046", "14985", "15036", "15062", "15061", "14549", "14822", "3933", "15057", "14119", "13291",
             "2573", "15006", "15056", "15046", "15047", "15059", "15054", "14814", "14444", "14998", "14642", "14856",
