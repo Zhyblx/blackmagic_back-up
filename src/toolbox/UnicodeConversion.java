@@ -57,9 +57,9 @@ public class UnicodeConversion {
 
 
     public static void main(String[] args) throws Exception {
-        System.out.println(UnicodeConversion.getdecodeUnicode("\\u60a8\\u53ef"));
-        System.out.println(UnicodeConversion.getdecodeUnicode("Notice that URL encode"));
-        System.out.println(UnicodeConversion.getgbEncoding("Notice that URL encode"));
+        System.out.println(UnicodeConversion.getdecodeUnicode("\\u8682\\u8681\\u91d1\\u670d"));
+//        System.out.println(UnicodeConversion.getdecodeUnicode("Notice that URL encode"));
+//        System.out.println(UnicodeConversion.getgbEncoding("Notice that URL encode"));
 
 
     }

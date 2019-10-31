@@ -131,7 +131,7 @@ public class AutomaticProfitCalculation {
             System.out.println("线程(timer)名称:"+Thread.currentThread().getName());
             try {
                 boolean order = false;
-                int i = 10;
+                int i = 5;
                 automaticProfitCalculation.thread.start();
                 Thread.sleep(6000);
                 while (i >= 0) {
@@ -149,7 +149,7 @@ public class AutomaticProfitCalculation {
                 System.out.println(profitCalculation.getProfitCalculationList());
                 System.out.println(profitCalculation.getSpecialGoods());
 
-                // 排除商品ID 12810、13038 的利润LIST
+                // 排除商品ID 12810、13038 15121 的利润LIST
                 List<Double> fullProfitList = new ArrayList<Double>();
                 fullProfitList.addAll(profitCalculation.getProfitCalculationList());
 
@@ -173,7 +173,7 @@ public class AutomaticProfitCalculation {
     };
 
     private static AutomaticProfitCalculation automaticProfitCalculation =
-            new AutomaticProfitCalculation("2019-09-06", "2019-09-06", "7C67265D4E12823611F186C11EF75DAD");
+            new AutomaticProfitCalculation("2019-10-24", "2019-10-24", "930F769364BEFDE29AEC4CEE54E053D1");
 
     /*
      * 线程：main

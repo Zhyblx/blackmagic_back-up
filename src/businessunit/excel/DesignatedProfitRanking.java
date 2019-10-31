@@ -150,11 +150,15 @@ public class DesignatedProfitRanking extends ProfitRanking implements Runnable {
      * 2.shopIDArray:指定的商品ID
      */
 
-    private static DesignatedProfitRanking designatedProfitRanking = new DesignatedProfitRanking("2019-09-06至2019-09-06的订单.xlsx");
-    private static String[] shopIDArray = new String[]{"15058", "15013", "14997", "6745", "15037", "15038", "15044",
-            "15045", "15046", "14985", "15036", "15062", "15061", "14549", "14822", "3933", "15057", "14119", "13291",
-            "2573", "15006", "15056", "15046", "15047", "15059", "15054", "14814", "14444", "14998", "14642", "14856",
-            "14667", "3556", "3542", "13140", "2679", "15063", "4333", "14825"};
+//    private static DesignatedProfitRanking designatedProfitRanking = new DesignatedProfitRanking("2019-09-06至2019-09-08的订单.xlsx");
+//    private static String[] shopIDArray = new String[]{"13291","14119","15057","14822","2750","14985","15036","3933","2573","15062","15061",
+//            "15046","15045","15044","15038","15037","6745","14997","15013","15058","15006","15059","15056","15047","15054","15065","4333",
+//            "2679","14642","3542","3556","14667","14998","14856","14444","14668","15071","13462","13533","15063","12948","10435","13140",
+//            "12655","14814","14825","14321","15080","14888","12486","14896","15082"};
+
+    // 以下是个护
+    private static DesignatedProfitRanking designatedProfitRanking = new DesignatedProfitRanking("2019-09-27至2019-09-30的订单.xlsx");
+    private static String[] shopIDArray = new String[]{"15117","15098","15107"};
 
     public static void main(String[] args) {
         new Thread(designatedProfitRanking).start();

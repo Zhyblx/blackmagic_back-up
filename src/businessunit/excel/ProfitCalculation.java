@@ -78,7 +78,7 @@ public class ProfitCalculation {
                  */
                 if (orderStatusXSSFCell.toString().equals("付款成功") &&
                         !(classifyXSSFCell.toString().equals("金融") || classifyXSSFCell.toString().equals("轻古集市") || classifyXSSFCell.toString().equals("特权")) &&
-                        !(goodsIDXSSFCell.toString().equals("12810") || goodsIDXSSFCell.toString().equals("13038"))
+                        !(goodsIDXSSFCell.toString().equals("12810") || goodsIDXSSFCell.toString().equals("13038") || goodsIDXSSFCell.toString().equals("15121"))
                 ) {
 //                    System.out.println(orderStatusXSSFCell.toString() + "_" + classifyXSSFCell.toString());
                     costPrice = costPrice + (Double.valueOf(numberXSSFCell.toString()) * Double.valueOf(costPriceXSSFCell.toString())); //实际成本汇总
@@ -123,7 +123,7 @@ public class ProfitCalculation {
                 /*
                  * 如果商品ID 等于12810、13038）并且 支付金额等于0，那么它的成本是25元，实际支付金额29元
                  */
-                if ((goodsIDXSSFCell.toString().equals("12810") || goodsIDXSSFCell.toString().equals("13038"))) {
+                if ((goodsIDXSSFCell.toString().equals("12810") || goodsIDXSSFCell.toString().equals("13038") || goodsIDXSSFCell.toString().equals("15121"))) {
                     if ((paymentPriceXSSFCell.toString().equals("0.00"))) {
                         count++;
 
@@ -147,15 +147,15 @@ public class ProfitCalculation {
 
     public static void main(String[] args) throws Exception {
         //"/Users/zhangyibin/Downloads/2019-08-15至2019-08-15的订单.xlsx"
-        ProfitCalculation profitCalculation = new ProfitCalculation("/Users/zhangyibin/Downloads/2018-09-01至2018-09-30的订单.xlsx");
+        ProfitCalculation profitCalculation = new ProfitCalculation("/Users/zhangyibin/Downloads/2019-10-23至2019-10-24的订单.xlsx");
         System.out.println(profitCalculation.getProfitCalculationList());
         System.out.println(profitCalculation.getSpecialGoods());
 
-        // 排除商品ID 12810、13038 的利润LIST
+        // 排除商品ID 12810、13038 15121的利润LIST
         List<Double> fullProfitList = new ArrayList<Double>();
         fullProfitList.addAll(profitCalculation.getProfitCalculationList());
 
-        // 单独计算商品ID 12810、13038 的利润LIST
+        // 单独计算商品ID 12810、13038 15121的利润LIST
         List<Double> profitOfSpecialGoods = new ArrayList<Double>();
         profitOfSpecialGoods.addAll(profitCalculation.getSpecialGoods());
 

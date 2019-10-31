@@ -10,7 +10,8 @@ public class OcrStart {
 
     public static void main(String[] args) {
         try {
-            Ocr.getOcrRun("/Users/zhangyibin/Downloads/1.png");
+            System.out.println(
+            Ocr.getOcrRun("/Users/zhangyibin/Downloads/1.png"));
         } catch (Exception e) {
             e.printStackTrace();
         }

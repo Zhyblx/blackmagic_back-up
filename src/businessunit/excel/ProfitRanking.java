@@ -3,6 +3,7 @@ package businessunit.excel;
 /**
  * 类：ProfitRanking
  * 作用：根据利润进行降序(排序)
+ *
  */
 
 import java.io.File;
@@ -32,7 +33,7 @@ public class ProfitRanking implements Runnable {
         int collectionSize = list.size() - 1;
         System.out.println("TOP值" + "\t" + "商品标题" + "\t" + "销售数量" + "\t" + "汇总利润");
         while (collectionSize >= 0) {
-            if (topNum == 21) {
+            if (topNum == 10001) {
                 break;// 只输出TOP20
 
             }
@@ -70,6 +71,8 @@ public class ProfitRanking implements Runnable {
     private XSSFSheet xssfSheet = null;
     private XSSFRow xssfRow = null;
     private XSSFCell shopNameXssfCell = null; //商品名称
+    private XSSFCell shopIDXssfCell=null;// 商品ID
+
     private XSSFCell orderStatusXSSFCell = null;
     private XSSFCell classifyXSSFCell = null;
     private XSSFCell paymentPriceXSSFCell = null;
@@ -113,6 +116,7 @@ public class ProfitRanking implements Runnable {
                     xssfRow = xssfSheet.getRow(i);
                     paymentPriceXSSFCell = xssfRow.getCell(14);//支付金额
                     shopNameXssfCell = xssfRow.getCell(10); //商品名称
+                    shopIDXssfCell=xssfRow.getCell(9);// 商品ID
                     costPriceXSSFCell = xssfRow.getCell(31);//成本价
                     numberXSSFCell = xssfRow.getCell(12); // 商品数量
                     orderStatusXSSFCell = xssfRow.getCell(5); // 订单状态
@@ -140,7 +144,7 @@ public class ProfitRanking implements Runnable {
     }
 
     public static void main(String[] args) {
-        new Thread(new ProfitRanking("2019-09-06至2019-09-06的订单.xlsx")).start();
+        new Thread(new ProfitRanking("2019-10-23至2019-10-24的订单.xlsx")).start();
 
     }
 }
